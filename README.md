@@ -46,7 +46,13 @@ CrewAI_Workflow.json    # n8n workflow file in JSON
    pip install -r requirements.txt
    ```
 
-3. Start n8n locally: (Make sure [Node.js](https://nodejs.org/en/download) is installed on your local machine)
+3. Add your configuration:
+   - Create new file named `.env`
+   - Copy the variables that are in `.env.example` file
+   - Paste them in the new `.env` file
+   - Add your configurations (API Key)
+    
+4. Start n8n locally: (Make sure [Node.js](https://nodejs.org/en/download) is installed on your local machine)
     ```powershell
     npx n8n
     ```
@@ -57,7 +63,7 @@ CrewAI_Workflow.json    # n8n workflow file in JSON
         - Select the `CrewAI_Workflow.json` file
 
 
-6. Start the FastAPI Backend
+5. Start the FastAPI Backend
     ```powershell
     uvicorn backend.fastapi_backend.main:app --reload
     ```
