@@ -46,7 +46,13 @@ CrewAI_Workflow.json    # n8n workflow file in JSON
    pip install -r requirements.txt
    ```
 
-3. Start n8n locally: (Make sure [Node.js](https://nodejs.org/en/download) is installed on your local machine)
+3. Add your configuration:
+   - Create new file named `.env`
+   - Copy the variables that are in `.env.example` file
+   - Paste them in the new `.env` file
+   - Add your configurations (API Key)
+    
+4. Start n8n locally: (Make sure [Node.js](https://nodejs.org/en/download) is installed on your local machine)
     ```powershell
     npx n8n
     ```
@@ -55,9 +61,11 @@ CrewAI_Workflow.json    # n8n workflow file in JSON
         - Create Workflow
         - From the workflow option, select `import from File...`
         - Select the `CrewAI_Workflow.json` file
+        - Activate the workflow by turning on the Activate toggle button.
 
 
-6. Start the FastAPI Backend
+5. Start the FastAPI Backend
+   from new terminal, run the following command:
     ```powershell
     uvicorn backend.fastapi_backend.main:app --reload
     ```
@@ -69,7 +77,7 @@ CrewAI_Workflow.json    # n8n workflow file in JSON
 ### Option 1:
 You can run the application using the command line or any terminal:
 
-To run the workflow in production:
+To run the workflow in production, open new terminal, and run the following command:
 ```powershell
 curl.exe -X POST -H "Content-Type: application/json" -d '{\"doc_path\": \"data/AI_Article.docx\"}' http://localhost:5678/webhook/get_crew
 ```
