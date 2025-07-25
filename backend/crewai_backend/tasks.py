@@ -1,6 +1,5 @@
 from crewai import Task
 from .agents import read_doc_agent, summarization_agent
-from .output_format import AllSearchResults
 
 
 
@@ -14,7 +13,6 @@ def read_docs_task(llm_model):
         
         expected_output="Summary + follow-up questions",
         agent=agent,
-        output_json=AllSearchResults
     )
 
     return read_doc_task
