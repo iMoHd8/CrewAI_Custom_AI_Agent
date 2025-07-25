@@ -1,0 +1,88 @@
+{
+  "name": "CrewAI_Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "get_crew",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "693d3a86-8689-4c36-a4c4-7d91b7d7283d",
+      "name": "Webhook",
+      "webhookId": "677f4dac-f592-4147-807a-1475f3ca9cd6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/run-agent",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"doc_path\": \"{{ $json.body.doc_path }}\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f808c75d-8a65-41f4-af5e-c7fc3d45c2f4",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "be774585-fd3b-4732-b88f-60befec674d8",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "60289439-e234-4a84-ab6e-87d7d6d54c56",
+  "meta": {
+    "instanceId": "7e817a3bf36d049cf24f27b702cabe4893bec1e4e8c6f26e983cf4c8fb8515ab"
+  },
+  "id": "XRGHtWAFBUwNqu4s",
+  "tags": []
+}
