@@ -1,0 +1,1 @@
+LLM_MODEL_ID="gemini/gemini-2.5-pro"
