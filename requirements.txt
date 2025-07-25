@@ -8,5 +8,5 @@ python-dotenv
 python-multipart
 streamlit
 unstructured
-"unstructured[pdf]"
+unstructured[pdf]
 python-docx
