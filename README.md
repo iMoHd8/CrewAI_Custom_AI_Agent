@@ -61,6 +61,7 @@ CrewAI_Workflow.json    # n8n workflow file in JSON
         - Create Workflow
         - From the workflow option, select `import from File...`
         - Select the `CrewAI_Workflow.json` file
+        - Activate the workflow by turning on the Activate toggle button.
 
 
 5. Start the FastAPI Backend
