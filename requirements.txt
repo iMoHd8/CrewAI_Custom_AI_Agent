@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+requests
+crewai[tools]==0.95.0
+langchain
+python-dotenv
+python-multipart
+streamlit
+unstructured
+"unstructured[pdf]"
+python-docx
