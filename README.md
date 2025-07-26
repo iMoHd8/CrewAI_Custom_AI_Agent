@@ -88,8 +88,13 @@ or run the workflow in test mode:
 
 -  ```powershell
     curl.exe -X POST -H "Content-Type: application/json" -d '{\"doc_path\": \"data/AI_Article.docx\"}' http://localhost:5678/webhook-test/get_crew
-    ```
-- change the document path: {\"doc_path\": \"Add_the_file_path_here\"}
+ - change the document path: {\"doc_path\": \"Add_the_file_path_here\"}   ```
+
+- n8n Output example:
+
+   ![example](assets\n8n_example_output.png)
+
+
 
 
 ### Option 2
