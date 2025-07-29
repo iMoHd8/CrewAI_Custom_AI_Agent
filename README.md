@@ -92,7 +92,7 @@ or run the workflow in test mode:
 
 - n8n Output example:
 
-   ![example](assets\n8n_example_output.png)
+   ![example](assets/n8n_example_output.png)
 
 
 
