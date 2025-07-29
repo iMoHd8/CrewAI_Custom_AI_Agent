@@ -11,7 +11,7 @@ def read_docs_task(llm_model):
         description="""The user is looking to read this document {doc_path}. 
                     The user wants the content in the document to passed them into a summarization agent next step.""",
         
-        expected_output="Summary + follow-up questions",
+        expected_output="the content of the document",
         agent=agent,
     )
 
